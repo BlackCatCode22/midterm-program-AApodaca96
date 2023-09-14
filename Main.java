@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.printf("\nHello and welcome to Angelo's Thursday Sept. 14th Practice (Array List of Cats/Statics)!\n");
+        System.out.printf("\nHello and welcome to Angelo's Thursday Sept. 14th Practice (Array List of Cats/Statics)!\n\n");
 
 
         ArrayList<Cat> cats = new ArrayList<>();
@@ -11,6 +11,7 @@ public class Main {
         Cat cat1 = new Cat();
         cat1.name = "Fluffy";
         cat1.age = 3;
+        cat1.meowSound = "Meow meow";
 
         Cat cat2 = new Cat();
         cat2.name = "Mittens";
@@ -35,12 +36,12 @@ public class Main {
         cats.add(cat5);
 
         // Print number of cats
-        System.out.println("Number of cats: " + Cat.getCatCount());
+        System.out.println("Number of cats: " + Cat.getCatCount() + "\n");
 
         // Print out all cats
         for(Cat c : cats) {
-            System.out.println(c.name + " " + c.age);
-        } 
+            System.out.println(c.name + " is " + c.age + " years old ");
+        }
 
 //        System.out.println(Cat.MAX_LIVES);
 //        System.out.println(Cat.getCatCount());
