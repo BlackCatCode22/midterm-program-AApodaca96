@@ -3,46 +3,46 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.printf("Hello and welcome to Angelo's Zoo Practice!");
-
-        // Create some Student objects
-        Student student1 = new Student("John", "Doe", 3.5);
-        Student student2 = new Student("Jane", "Doe", 3.7);
-        Student student3 = new Student("Jim", "Taylor", 2.9);
-
-        ArrayList<Student> students = new ArrayList<>();
-
-        // Add the students to the ArrayList
-        students.add(student1);
-        students.add(student2);
-        students.add(student3);
-
-        // Output the student names
-        for (Student student : students) {
-            System.out.println("Student name is: " + student.name);
-
-        }
-
-        System.out.println();
-
-        myNewStudent.name = "First Last";
+        System.out.printf("\nHello and welcome to Angelo's Thursday Sept. 14th Practice (Array List of Cats/Statics)!\n");
 
 
-        /* // Create an animal
-        Animal myAnimal = new Animal();
+        ArrayList<Cat> cats = new ArrayList<>();
 
-        myAnimal.name = "Banzai";
+        Cat cat1 = new Cat();
+        cat1.name = "Fluffy";
+        cat1.age = 3;
 
-        // Create a new student
-        Student myNewStudent = new Student();
+        Cat cat2 = new Cat();
+        cat2.name = "Mittens";
+        cat2.age = 1;
 
-        myNewStudent.name = "First Last";
-        System.out.println("\n The new student's name is: " + myNewStudent.name);
-        */
+        Cat cat3 = new Cat();
+        cat3.name = "Garfield";
+        cat3.age = 5;
 
+        Cat cat4 = new Cat();
+        cat4.name = "Whiskers";
+        cat4.age = 2;
 
+        Cat cat5 = new Cat();
+        cat5.name = "Felix";
+        cat5.age = 4;
 
+        cats.add(cat1);
+        cats.add(cat2);
+        cats.add(cat3);
+        cats.add(cat4);
+        cats.add(cat5);
 
+        // Print number of cats
+        System.out.println("Number of cats: " + Cat.getCatCount());
 
+        // Print out all cats
+        for(Cat c : cats) {
+            System.out.println(c.name + " " + c.age);
+        } 
+
+//        System.out.println(Cat.MAX_LIVES);
+//        System.out.println(Cat.getCatCount());
     }
 }
