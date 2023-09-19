@@ -1,49 +1,87 @@
 import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 
 public class Main {
     public static void main(String[] args) {
 
-        System.out.printf("\nHello and welcome to Angelo's Thursday Sept. 14th Practice (Array List of Cats/Statics)!\n\n");
+        // Welcome Statement
+        System.out.printf("\nHello and welcome to Angelo's Class/Midterm Review!\n\n");
+
+        // Create an Array
+        ArrayList<Animal> animalList = new ArrayList<>();
+
+        // Define the File I/O path
+        String filePath = "C:/Users/angel/IdeaProjects/CIT_63_Java/Classes_Review_Sept_19th_2023/src/animalNames.txt";
+
+        try {
+            // Create FileReader and BufferedReader objects
+            FileReader fileReader = new FileReader(filePath);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            // Read lines from the file
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
+
+               /* // Mohle's Code
+                String[] myArray = line.split(",");
+                System.out.println("\n myArray[0] is " + myArray[0]);
+                System.out.println("\n myArray[1] is " + myArray[1]);*/
+
+                // Create an Animal object from the Animal Class
+                Animal anyOldAnimal = new Animal();
+
+                // Fill the object's data fields
+               /* anyOldAnimal.desc = myArray[0];
+                anyOldAnimal.birthSeason = myArray[1];
+                anyOldAnimal.color = myArray[2];
+                anyOldAnimal.weight = myArray[3];
+                anyOldAnimal.origin01 = myArray[4];
+                anyOldAnimal.origin02 = myArray[5];
+*/
+                // Add the newly created animal object to the array list
 
 
-        ArrayList<Cat> cats = new ArrayList<>();
+            }
 
-        Cat cat1 = new Cat();
-        cat1.name = "Fluffy";
-        cat1.age = 3;
-        cat1.meowSound = "Meow meow";
-
-        Cat cat2 = new Cat();
-        cat2.name = "Mittens";
-        cat2.age = 1;
-
-        Cat cat3 = new Cat();
-        cat3.name = "Garfield";
-        cat3.age = 5;
-
-        Cat cat4 = new Cat();
-        cat4.name = "Whiskers";
-        cat4.age = 2;
-
-        Cat cat5 = new Cat();
-        cat5.name = "Felix";
-        cat5.age = 4;
-
-        cats.add(cat1);
-        cats.add(cat2);
-        cats.add(cat3);
-        cats.add(cat4);
-        cats.add(cat5);
-
-        // Print number of cats
-        System.out.println("Number of cats: " + Cat.getCatCount() + "\n");
-
-        // Print out all cats
-        for(Cat c : cats) {
-            System.out.println(c.name + " is " + c.age + " years old ");
+            // Close the BufferedReader and FileReader
+            bufferedReader.close();
+            fileReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
-//        System.out.println(Cat.MAX_LIVES);
-//        System.out.println(Cat.getCatCount());
+
+
+
+        //myNewAnimal.desc = " this is my desc";
+
+       // System.out.println("\n the desc of the new animal is: " + myNewAnimal.desc);
+
+        // Open the arriving animal text file (File I/O)
+
+
+
+
+
+
+
+    /*
+        // Use a for loop to create five Animal objects and add them to the ArrayList
+        for (int i = 1, i <= 5; i++) {
+            // Using the constructor with arguments
+            Animal animal = new Animal("Animal" + i);
+            AnimalList.add(animal);
+        }
+
+        // Output the animalList with an item in loop
+        for (Animal animal : animalList) {
+            System.out.println(animal.name + " " + animal.age);
+        }
+    */
+
     }
 }
