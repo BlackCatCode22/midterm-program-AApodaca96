@@ -1,31 +1,41 @@
+import java.util.Date;
+
 public class Animal {
+    private int numOfAnimals = 0;
 
-    // Counter
-    public static int numOfAnimals = 0;
+    // Animal Attributes
+    private String animalID;
+    private String animalName;
+    private Date animalBirthDate;
+    private String animalColor;
+    private char animalGender;
+    private float animalWeight;
+    private String arrivingFrom;
 
+
+    // Getters & Setters
+    public String getAnimalID() {
+        return animalID;
+    }
+
+    // Animal ID Setter
+    public void setAnimalID(String animalID) {
+        this.animalID = animalID;
+    }
+
+    // Animal Name Getter
+    public void getAnimalName(String animalName) {
+        this.animalName = animalName;
+    }
 
     // Constructor
     public Animal() {
+        System.out.println("\n");
         numOfAnimals++;
     }
 
-
-    // Fields/Attributes
-    String name;
-    String desc;
-    String birthSeason;
-    String color;
-    String weight;
-    String origin01;
-    String origin02;
-
-
-    // Methods
-    public void makenoise() {
-        System.out.println("This is an animal object making noise... ");
+    public int getNumOfAnimals(){
+        return numOfAnimals;
     }
-    public String makenoise02() {
-        return "This is a string returned from a method in my Animal Class";
-    }
-
 }
+
