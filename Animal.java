@@ -1,41 +1,59 @@
-import java.util.Date;
+import java.nio.file.*;
+import java.io.IOException;
+import java.util.*;
 
-public class Animal {
-    private int numOfAnimals = 0;
+public abstract class Animal {
+    protected String animalID;
+    protected String animalName;
+    protected String animalColor;
+    protected String birthDate;
 
-    // Animal Attributes
-    private String animalID;
-    private String animalName;
-    private Date animalBirthDate;
-    private String animalColor;
-    private char animalGender;
-    private float animalWeight;
-    private String arrivingFrom;
+    // Constructor for the Animal class
+    public Animal(String animalColor, String birthSeason) {
+        this.animalColor = animalColor;
+        this.birthDate = calcBirthdate(birthSeason);
+    }
 
+    // Utility method to read names from a file
+    protected static List<String> readNamesFromFile(String filePath) {
+        try {
+            return Files.readAllLines(Paths.get(filePath));
+        } catch (IOException e) {
+            System.out.println("Error reading from file: " + filePath);
+            return new ArrayList<>();
+        }
+    }
 
-    // Getters & Setters
+    // Method to calculate birthdate based on birth season
+    protected String calcBirthdate(String birthSeason) {
+        switch (birthSeason.toLowerCase()) {
+            case "spring":
+                return "March 20";
+            case "summer":
+                return "June 21";
+            case "fall":
+                return "September 22";
+            case "winter":
+                return "December 21";
+            default:
+                return "Unknown";
+        }
+    }
+
+    // Getter methods
     public String getAnimalID() {
         return animalID;
     }
 
-    // Animal ID Setter
-    public void setAnimalID(String animalID) {
-        this.animalID = animalID;
+    public String getAnimalName() {
+        return animalName;
     }
 
-    // Animal Name Getter
-    public void getAnimalName(String animalName) {
-        this.animalName = animalName;
+    public String getAnimalColor() {
+        return animalColor;
     }
 
-    // Constructor
-    public Animal() {
-        System.out.println("\n");
-        numOfAnimals++;
-    }
-
-    public int getNumOfAnimals(){
-        return numOfAnimals;
+    public String getBirthDate() {
+        return birthDate;
     }
 }
-
